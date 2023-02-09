@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import * as Font from 'expo-font';
@@ -12,6 +11,10 @@ import { DMSans_400Regular } from '@expo-google-fonts/dm-sans';
 import { DMSerifDisplay_400Regular } from '@expo-google-fonts/dm-serif-display';
 
 import theme from '@src/theme';
+
+import { SignIn } from '@screens/SignIn';
+
+import { AppProvider } from '@hooks/index';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -47,8 +50,10 @@ export default function App() {
   return (
     <GestureHandlerRootView onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
-        <StatusBar style="light" backgroundColor="transparent" translucent />
-        <View />
+        <AppProvider>
+          <StatusBar style="light" backgroundColor="transparent" translucent />
+          <SignIn />
+        </AppProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
   );

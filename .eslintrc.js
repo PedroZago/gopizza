@@ -20,6 +20,8 @@ module.exports = {
               '/^@src/',
               '/^@components/',
               '/^@screens/',
+              '/^@hooks/',
+              '/^@utils/',
               '/^@assets/',
               ['parent', 'sibling', 'index'],
             ],
