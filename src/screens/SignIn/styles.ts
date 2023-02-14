@@ -21,7 +21,6 @@ export const Container = styled(LinearGradient).attrs(
     } as LinearGradientProps)
 )`
   flex: 1;
-
   justify-content: center;
 `;
 

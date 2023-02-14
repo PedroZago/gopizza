@@ -7,9 +7,10 @@ import React, {
 } from 'react';
 import { Alert } from 'react-native';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { USER_COLLECTION } from '@src/constants';
 import { NativeFirebaseError } from '@src/interfaces';

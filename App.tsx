@@ -12,7 +12,7 @@ import { DMSerifDisplay_400Regular } from '@expo-google-fonts/dm-serif-display';
 
 import theme from '@src/theme';
 
-import { SignIn } from '@screens/SignIn';
+import { Routes } from '@routes/index';
 
 import { AppProvider } from '@hooks/index';
 
@@ -52,7 +52,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <AppProvider>
           <StatusBar style="light" backgroundColor="transparent" translucent />
-          <SignIn />
+          <Routes />
         </AppProvider>
       </ThemeProvider>
     </GestureHandlerRootView>

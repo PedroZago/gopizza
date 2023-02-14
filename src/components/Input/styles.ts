@@ -22,18 +22,16 @@ export const Container = styled(TextInput).attrs<Props>(
   background-color: transparent;
 
   border-radius: 12px;
-
-  font-size: 14px;
-
   padding: 7px 0;
   padding-left: 20px;
   margin-bottom: 16px;
 
   ${({ theme, type }) => css`
+    font-size: 14px;
     font-family: ${theme.FONTS.TEXT};
-    color: ${
-      isPrimaryType(type) ? theme.COLORS.SECONDARY_900 : theme.COLORS.TITLE
-    }
+    color: ${isPrimaryType(type)
+      ? theme.COLORS.SECONDARY_900
+      : theme.COLORS.TITLE};
 
     border: 1px solid ${theme.COLORS.SHAPE};
   `}

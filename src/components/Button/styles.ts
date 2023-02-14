@@ -11,14 +11,13 @@ interface ContainerProps {
 
 export const Container = styled(RectButton)<ContainerProps>`
   flex: 1;
+  justify-content: center;
+  align-items: center;
 
   max-height: 56px;
   min-height: 56px;
 
   border-radius: 12px;
-
-  justify-content: center;
-  align-items: center;
 
   background-color: ${({ theme, type }) =>
     isPrimaryType(type) ? theme.COLORS.SUCCESS_900 : theme.COLORS.PRIMARY_800};

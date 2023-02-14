@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, Platform } from 'react-native';
+import {
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  TouchableWithoutFeedback,
+} from 'react-native';
 
-import { Button } from '@components/Button';
-import { Input } from '@components/Input';
+import { Button, Input } from '@components/index';
 
 import { useAuth } from '@hooks/auth';
 
@@ -10,7 +14,7 @@ import BrandImg from '@assets/brand.png';
 
 import * as S from './styles';
 
-export function SignIn() {
+export const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -29,38 +33,40 @@ export function SignIn() {
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
-        <S.Content>
-          <S.Brand source={BrandImg} />
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <S.Content>
+            <S.Brand source={BrandImg} />
 
-          <S.Title>Login</S.Title>
+            <S.Title>Login</S.Title>
 
-          <Input
-            placeholder="E-mail"
-            type="secondary"
-            autoCorrect={false}
-            autoCapitalize="none"
-            onChangeText={setEmail}
-          />
+            <Input
+              placeholder="E-mail"
+              type="secondary"
+              autoCorrect={false}
+              autoCapitalize="none"
+              onChangeText={setEmail}
+            />
 
-          <Input
-            placeholder="Senha"
-            type="secondary"
-            secureTextEntry
-            onChangeText={setPassword}
-          />
+            <Input
+              placeholder="Senha"
+              type="secondary"
+              secureTextEntry
+              onChangeText={setPassword}
+            />
 
-          <S.ForgotPasswordButton onPress={handleForgotPassword}>
-            <S.ForgotPasswordLabel>Esqueci minha senha</S.ForgotPasswordLabel>
-          </S.ForgotPasswordButton>
+            <S.ForgotPasswordButton onPress={handleForgotPassword}>
+              <S.ForgotPasswordLabel>Esqueci minha senha</S.ForgotPasswordLabel>
+            </S.ForgotPasswordButton>
 
-          <Button
-            title="Entrar"
-            type="secondary"
-            onPress={handleSignIn}
-            isLoading={isLogging}
-          />
-        </S.Content>
+            <Button
+              title="Entrar"
+              type="secondary"
+              onPress={handleSignIn}
+              isLoading={isLogging}
+            />
+          </S.Content>
+        </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
     </S.Container>
   );
-}
+};

@@ -22,3 +22,10 @@ export interface NativeFirebaseError {
 
   stack: undefined | string;
 }
+
+export type ProductData = {
+  id: string;
+  photo_url: string;
+  name: string;
+  description: string;
+};
