@@ -85,7 +85,7 @@ export const Title = styled(Text)`
   `}
 `;
 
-export const ProductList = styled(
+export const ProductsList = styled(
   FlatList as new (props: FlatListProps<ProductData>) => FlatList<ProductData>
 ).attrs({
   contentContainerStyle: {

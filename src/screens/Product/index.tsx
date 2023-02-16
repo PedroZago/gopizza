@@ -146,7 +146,7 @@ export const Product = () => {
       setPriceSizeM(product.prices_sizes.m);
       setPriceSizeG(product.prices_sizes.g);
     } catch {
-      Alert.alert('Cadastro', 'Não foi possível cadastrar a pizza.');
+      Alert.alert('Cadastro', 'Não foi possível carregar a pizza.');
     }
   }
 

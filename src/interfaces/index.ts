@@ -29,3 +29,14 @@ export type ProductData = {
   name: string;
   description: string;
 };
+
+export type StatusTypesProps = 'Preparando' | 'Pronto' | 'Entregue';
+
+export type OrderData = {
+  id: string;
+  pizza: string;
+  image: string;
+  status: StatusTypesProps;
+  table_number: string;
+  quantity: string;
+};

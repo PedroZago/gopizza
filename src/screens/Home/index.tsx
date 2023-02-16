@@ -8,6 +8,7 @@ import firestore from '@react-native-firebase/firestore';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 
+import { useAuth } from '@src/hooks/auth';
 import { ProductData } from '@src/interfaces';
 
 import { Search, ProductCard } from '@components/index';
@@ -22,6 +23,7 @@ export const Home = () => {
 
   const theme = useTheme();
   const navigation = useNavigation();
+  const { signOut, user } = useAuth();
 
   async function fetchPizzas(value = '') {
     try {
@@ -57,11 +59,17 @@ export const Home = () => {
   }
 
   function handleOpen(id: string) {
-    navigation.navigate('product', { id });
+    const route = user?.isAdmin ? 'product' : 'order';
+
+    navigation.navigate(route, { id });
   }
 
   function handleAdd() {
     navigation.navigate('product', {});
+  }
+
+  function handleLogout() {
+    signOut();
   }
 
   useFocusEffect(
@@ -79,7 +87,7 @@ export const Home = () => {
           <S.GreetingText>Olá, Admin</S.GreetingText>
         </S.Greeting>
 
-        <S.SignOut>
+        <S.SignOut onPress={handleLogout}>
           <MaterialIcons name="logout" color={theme.COLORS.TITLE} size={24} />
         </S.SignOut>
       </S.Header>
@@ -99,7 +107,7 @@ export const Home = () => {
         }`}</S.MenuItemsNumber>
       </S.MenuHeader>
 
-      <S.ProductList
+      <S.ProductsList
         data={pizzas}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
@@ -107,11 +115,13 @@ export const Home = () => {
         )}
       />
 
-      <S.NewProductButton
-        title="Cadastrar pizza"
-        type="secondary"
-        onPress={handleAdd}
-      />
+      {user?.isAdmin && (
+        <S.NewProductButton
+          title="Cadastrar pizza"
+          type="secondary"
+          onPress={handleAdd}
+        />
+      )}
     </S.Container>
   );
 };
