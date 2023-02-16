@@ -14,7 +14,7 @@ interface ButtonProps extends RectButtonProps {
 export const Button: React.FC<ButtonProps> = ({
   title,
   type = 'primary',
-  isLoading,
+  isLoading = false,
   ...rest
 }) => {
   return (

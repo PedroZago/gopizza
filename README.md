@@ -2,24 +2,30 @@
   GoPizza
 </h1>
 
-![cover](.github/assets/capa.png)
-
 ## 💻 Sobre o projeto
 
-Projeto de um aplicativo mobile de um sistema de uma pizzaria para cadastro e realização de pedidos das pizzas, desenvolvido durante o **Ignite de ReactJS** oferecida pela [Rocketseat](https://www.rocketseat.com.br/ignite/).
+Projeto de um aplicativo mobile de um sistema de uma pizzaria para cadastro e realização de pedidos das pizzas, possuindo uma interface para os funcionários e outra para os administradores, desenvolvido durante o **Ignite de ReactJS** oferecida pela [Rocketseat](https://www.rocketseat.com.br/ignite/).
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- [x] Cadastro das pizzas;
-- [x] Cadastro de novos pedidos.
+- [x] Interface para administradores;
+- [x] Interface para funcionários;
+- [x] Registrar produtos;
+- [x] Registrar pedidos;
+- [x] Autenticação com firebase.
 
 ---
 
 ## 🎨 Layout
 
-<!-- ![Home](./.github/assets/image_1.png) -->
+![Home](./.github/assets/login.png)
+![Home](./.github/assets/cardapio_admin.png)
+![Home](./.github/assets/registrar_produto.png)
+![Home](./.github/assets/cardapio_garcom.png)
+![Home](./.github/assets/pedidos.png)
+![Home](./.github/assets/registrar_pedido.png)
 
 ---
 

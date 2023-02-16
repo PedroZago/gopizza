@@ -84,7 +84,7 @@ export const Home = () => {
         <S.Greeting>
           <S.GreetingEmoji source={HappyEmoji} />
 
-          <S.GreetingText>Olá, Admin</S.GreetingText>
+          <S.GreetingText>Olá, {user?.name}</S.GreetingText>
         </S.Greeting>
 
         <S.SignOut onPress={handleLogout}>
